@@ -177,6 +177,7 @@
 .news__contents-ttl {
     font-size: 16px;
     margin: 20px 0;
+    text-align: start;
 }
 
 .news__btn-more {
