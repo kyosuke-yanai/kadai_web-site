@@ -32,27 +32,34 @@
             <section class="news-twitter base__wrapper">
                 <div class="news-twitter__item">
                     <div class="news">
-                        <h2 class="news__ttl base__ttl--before-line">News.</h2>
+                        <h2 class="news__ttl base__ttl base__ttl--before-line">News.</h2>
                         <ul class="news__contents-list">
                             <li class="news__contents base__liststyle--none" v-for="_ in 6">
                                 <img src="images/PC/news/nophoto.jpg" alt="" class="news__contents-img">
                                 <p class="news__contents-ttl">タイトルが入ります</p>
                             </li>
                         </ul>
-                        <button class="news__btn-more base__btnstyle">MORE</button>
+                        <button class="news__btn-more base__btnstyle">MORE<span>+</span></button>
                     </div>
                     <div class="twitter">
-                        <h2 class="twitter__ttl base__ttl--before-line">Twitter.</h2>
+                        <h2 class="twitter__ttl base__ttl base__ttl--before-line">Twitter.</h2>
                         <div class="twitter__contents">
-                            <a class="twitter__contents-timeline twitter-timeline" data-height="1243" href="https://twitter.com/okanokiseki?ref_src=twsrc%5Etfw">Tweets by
-                                okanokiseki</a>
-                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            <div class="pc">
+                                <a class="twitter__contents-timeline twitter-timeline" data-width="306" data-height="587" href="https://twitter.com/okanokiseki?ref_src=twsrc%5Etfw">Tweets by
+                                    okanokiseki</a>
+                                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            </div>
+                            <div class="sp">
+                                <a class="twitter__contents-timeline twitter-timeline" data-width="648" data-height="1243" href="https://twitter.com/okanokiseki?ref_src=twsrc%5Etfw">Tweets by
+                                    okanokiseki</a>
+                                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
             <section class="schedule base__wrapper">
-                <h2 class="schedule__ttl base__ttl--before-line">Schedule.</h2>
+                <h2 class="schedule__ttl base__ttl base__ttl--before-line">Schedule.</h2>
                 <ul class="schedule__contents-list">
                     <li class="schedule__contents base__liststyle--none" v-for="_ in 3">
                         <time class="schedule__contents-time-text">2018.3.31</time>
@@ -67,7 +74,7 @@
                 </ul>
             </section>
             <section class="music base__wrapper">
-                <h2 class="music__ttl base__ttl--before-line">Music.</h2>
+                <h2 class="music__ttl base__ttl base__ttl--before-line">Music.</h2>
                 <div class="music__contents">
                     <img src="images/PC/music/music_ph.jpg" alt="" class="music__ph-img">
                     <img src="images/PC/music/music_ttl.png" alt="" class="music__ttl-img">
@@ -75,7 +82,7 @@
             </section>
             <section class="member">
                 <div class="base__wrapper">
-                    <h2 class="member__ttl base__ttl--before-line">Member.</h2>
+                    <h2 class="member__ttl base__ttl base__ttl--before-line">Member.</h2>
                     <ul class="member__contents-list">
                         <li class="member__contents" v-for="member in members">
                             <ul class="member__profile-text">
@@ -100,7 +107,7 @@
                 </div>
             </section>
             <section class="contact base__wrapper">
-                <h2 class="contact__ttl base__ttl--before-line">Contact.</h2>
+                <h2 class="contact__ttl base__ttl base__ttl--before-line">Contact.</h2>
                 <p class="contact__text--small">すべて入力必須項目です</p>
                 <ul class="contact__contents-list">
                     <li class="contact__contents base__ttl--before-line" v-for="contact in contacts">
