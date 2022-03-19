@@ -18,6 +18,10 @@
     .sp {
         display: block;
     }
+    .br::before {
+        content: "\A";
+        white-space: pre;
+    }
 }
 
 .base__wrapper {
@@ -403,5 +407,35 @@
     .member_profile-img {
         width: 450px;
         height: 846px;
+    }
+}
+
+.footer {
+    background-color: #d5cdb9;
+}
+
+.footer__contents-text {
+    font-size: 18px;
+    text-align: center;
+}
+
+.footer__contents-img {
+    width: 100%;
+    color: #000000;
+}
+
+.footer__contents-copylight {
+    font-size: 12px;
+    font-weight: 400;
+    color: #00275b;
+}
+
+@media screen and (max-width: 751px) {
+    .footer__contents-text {
+        font-size: 24px;
+    }
+    .footer__contents-copylight {
+        font-size: 16px;
+        text-align: center;
     }
 }
