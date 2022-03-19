@@ -284,6 +284,10 @@ body {
     }
 }
 
+.past_schedule__ttl:before {
+    border-color: #bbad7b;
+}
+
 .schedule__contents .schedule__contents-time-text {
     display: flex;
     align-items: center;

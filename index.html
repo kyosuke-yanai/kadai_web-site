@@ -60,16 +60,22 @@
                 <h2 class="schedule__ttl base__ttl base__ttl--before-line">Schedule.</h2>
                 <ul class="schedule__contents-list">
                     <li class="schedule__contents base__list-style--none" v-for="schedule in schedules">
-                        <time class="schedule__contents-time-text">{{ schedule.post_data }}<span class="schedule__contents-time-new" v-if="schedule.new_flg">NEW</span></time>
+                        <time class="schedule__contents-time-text">{{ schedule.post_data }}<span
+                                class="schedule__contents-time-new" v-if="schedule.new_flg">NEW</span></time>
                         <h3 class="schedule__contents-text"><span>{{ schedule.schedule_data }} </span>{{ schedule.text }}
                         </h3>
                         <hr>
                     </li>
-                    <li class="schedule__contents--past base__list-style--none" v-for="past_chedule in past_chedules">
-                        <time class="schedule__contents-time-text">{{ past_chedule.post_data }}</time>
-                        <h3 class="schedule__contents-text"><span>{{ past_chedule.schedule_data }} </span>{{ past_chedule.text }}</h3>
-                    </li>
                 </ul>
+                <div class="pc">
+                    <h2 class="past_schedule__ttl base__ttl base__ttl--before-line ">Past Schedule.</h2>
+                    <ul>
+                        <li class="schedule__contents--past base__list-style--none" v-for="past_chedule in past_chedules">
+                            <time class="schedule__contents-time-text">{{ past_chedule.post_data }}</time>
+                            <h3 class="schedule__contents-text"><span>{{ past_chedule.schedule_data }} </span>{{ past_chedule.text }}</h3>
+                        </li>
+                    </ul>
+                </div>
             </section>
             <section class="music base__wrapper">
                 <h2 class="music__ttl base__ttl base__ttl--before-line">Music.</h2>
