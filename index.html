@@ -21,12 +21,8 @@
         </header>
         <main>
             <section class="mv">
-                <div class="pc">
-                    <img src="images/PC/mv/mv_pc.jpg" alt="" class="mv__top-img">
-                </div>
-                <div class="sp">
-                    <img src="images/SP/mv/mv_sp.jpg" alt="" class="mv__top-img">
-                </div>
+                <img src="images/PC/mv/mv_pc.jpg" alt="" class="mv__top-img pc">
+                <img src="images/SP/mv/mv_sp.jpg" alt="" class="mv__top-img sp">
                 <img src="images/PC/mv/alert.png" alt="" class="mv__alert-img">
             </section>
             <section class="news-twitter base__wrapper">
@@ -34,23 +30,25 @@
                     <div class="news">
                         <h2 class="news__ttl base__ttl base__ttl--before-line">News.</h2>
                         <ul class="news__contents-list">
-                            <li class="news__contents base__liststyle--none" v-for="_ in 6">
+                            <li class="news__contents base__list-style--none" v-for="_ in 6">
                                 <img src="images/PC/news/nophoto.jpg" alt="" class="news__contents-img">
                                 <p class="news__contents-ttl">タイトルが入ります</p>
                             </li>
                         </ul>
-                        <button class="news__btn-more base__btnstyle">MORE<span>+</span></button>
+                        <button class="news__btn-more base__btn-style">MORE<span>+</span></button>
                     </div>
                     <div class="twitter">
                         <h2 class="twitter__ttl base__ttl base__ttl--before-line">Twitter.</h2>
                         <div class="twitter__contents">
                             <div class="pc">
-                                <a class="twitter__contents-timeline twitter-timeline" data-width="306" data-height="587" href="https://twitter.com/okanokiseki?ref_src=twsrc%5Etfw">Tweets by
+                                <a class="twitter__contents-timeline twitter-timeline" data-width="306" data-height="587" href="https://twitter.com/okanokiseki?ref_src=twsrc%5Etfw">Tweets
+                                    by
                                     okanokiseki</a>
                                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                             </div>
                             <div class="sp">
-                                <a class="twitter__contents-timeline twitter-timeline" data-width="648" data-height="1243" href="https://twitter.com/okanokiseki?ref_src=twsrc%5Etfw">Tweets by
+                                <a class="twitter__contents-timeline twitter-timeline" data-width="648" data-height="1243" href="https://twitter.com/okanokiseki?ref_src=twsrc%5Etfw">Tweets
+                                    by
                                     okanokiseki</a>
                                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                             </div>
@@ -61,12 +59,12 @@
             <section class="schedule base__wrapper">
                 <h2 class="schedule__ttl base__ttl base__ttl--before-line">Schedule.</h2>
                 <ul class="schedule__contents-list">
-                    <li class="schedule__contents base__liststyle--none" v-for="_ in 3">
+                    <li class="schedule__contents base__list-style--none" v-for="_ in 3">
                         <time class="schedule__contents-time-text">2018.3.31</time>
                         <h3 class="schedule__contents-text"><span>4/11</span>以下が水平線の例</h3>
                         <hr>
                     </li>
-                    <li class="schedule__contents--past base__liststyle--none" v-for="_ in 2">
+                    <li class="schedule__contents--past base__list-style--none" v-for="_ in 2">
                         <time class="schedule__contents-time-text">2018.3.31</time>
                         <h3 class="schedule__contents-text"><span>4/11</span>以下が水平線の例</h3>
                         <hr>
@@ -84,29 +82,40 @@
                 <div class="base__wrapper">
                     <h2 class="member__ttl base__ttl base__ttl--before-line">Member.</h2>
                     <ul class="member__contents-list">
-                        <li class="member__contents" v-for="member in members">
+                        <li class="member__contents base__list-style--none" v-for="member in members">
                             <ul class="member__profile-text">
-                                <li class="member__profile-name">
-                                    <div class="member__profile-name-main">{{ member.name }}</div>
+                                <li class="member__profile-name base__list-style--none">
+                                    <div class="member__profile-name-main" :style="{color: member.color_css}">{{ member.name }}</div>
                                     <div class="member__profile-name-yomi">{{ member.name_yomi }}</div>
                                 </li>
-                                <li class="member__profile-hobby">
-                                    <div class="member__profile-hobby-ttl">特　技</div>
-                                    <div class="member__profile-hobby-main">{{ member.hobby }}</div>
-                                </li>
-                                <li class="member__profile-skill">
-                                    <div class="member__profile-skill-ttl">特　技</div>
-                                    <div class="member__profile-skill-main">{{ member.skill }}</div>
-                                </li>
-                                <li class="member__profile-color">{{ member.color }}</li>
-                                <li class="member__profile-details"></li>
+                                <div class="member__profile-wrapper">
+                                    <li class="member__profile-hobby base__list-style--none">
+                                        <div class="member__profile-hobby-ttl">趣　味</div>
+                                        <div class="member__profile-hobby-main base__newline-style">{{ member.hobby }}
+                                        </div>
+                                    </li>
+                                    <li class="member__profile-skill base__list-style--none">
+                                        <div class="member__profile-skill-ttl">特　技</div>
+                                        <div class="member__profile-skill-main base__newline-style">{{ member.skill }}
+                                        </div>
+                                    </li>
+                                    <li class="member__profile-color base__list-style--none" :style="{color: member.color_css}">{{ member.color }}</li>
+                                    <li class="member__profile-details base__list-style--none">
+                                        <ul>
+                                            <li class="member__profile-detail base__list-style--none" v-for="detail in member.details">
+                                                <div class="mamber__profile-detail-item" :style="{backgroundColor: member.color_css}">{{ detail.item }}</div>
+                                                <div class="mamber__profile-detail-text">{{ detail.text }}</div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </div>
                             </ul>
                             <img v-bind:src="member.src" alt="" class="member_profile-img">
                         </li>
                     </ul>
                 </div>
             </section>
-            <section class="contact base__wrapper">
+            <section class="contact base__wrapper pc">
                 <h2 class="contact__ttl base__ttl base__ttl--before-line">Contact.</h2>
                 <p class="contact__text--small">すべて入力必須項目です</p>
                 <ul class="contact__contents-list">
@@ -115,14 +124,15 @@
                         <input type="text" class="contact__contents-input">
                     </li>
                 </ul>
-                <button class="contents__btn-back base__btnstyle">BACK</button>
-                <button class="contents__btn-submit base__btnstyle">SUBMIT</button>
+                <button class="contents__btn-back base__btn-style">BACK</button>
+                <button class="contents__btn-submit base__btn-style">SUBMIT</button>
             </section>
         </main>
         <footer class="footer">
             <div class="footer__contents base__wrapper">
                 <h2 class="footer__contents-text">キャストは競馬が大好きな人から乗馬をやっている人までとにかくお馬さんが好きな人たちばかり！</h2>
-                <img src="images/PC/footer/bar_banner_on_pc.jpg" alt="" class="footer__contents-img">
+                <img src="images/PC/footer/bar_banner_on_pc.jpg" alt="" class="footer__contents-img pc">
+                <img src="images/SP/footer/bar_banner_sp.jpg" alt="" class="footer__contents-img sp">
                 <p class="footer__contents-copylight">Copyright © 2018 OKA NO KISEKI OFFICIAL </p>
             </div>
         </footer>
@@ -138,63 +148,189 @@
                     name_yomi: "Shirota Eriko",
                     hobby: "お散歩",
                     skill: "焼肉屋さんで、テーブル全員分のお肉をやきながら、自分もみんなと同じそれ以上のスピードで食べられること。",
-                    color: "● Royal Blue"
+                    color: "● Royal Blue",
+                    color_css: "#005598",
+                    details: [{
+                        item: "BIRTH.",
+                        text: "1997.7.14"
+                    }, {
+                        item: "BLOOD",
+                        text: "B型"
+                    }, {
+                        item: "HEIGHT.",
+                        text: "160cm"
+                    }, {
+                        item: "BORN.",
+                        text: "東京"
+                    }, ]
                 }, {
                     src: "images/PC/members/ramune.png",
-                    name: "q",
-                    name_yomi: "",
-                    hobby: "",
-                    skill: "焼肉屋さんで",
-                    color: ""
+                    name: "水海 らむね",
+                    name_yomi: "Mizumi Ramune",
+                    hobby: "カメラ",
+                    skill: "水泳",
+                    color: "● Andalusian White",
+                    color_css: "#ffb3a9",
+                    details: [{
+                        item: "HEIGHT.",
+                        text: "158cm"
+                    }, {
+                        item: "BORN.",
+                        text: "長崎"
+                    }, {
+                        item: "UNIV.",
+                        text: "聖心女子大学"
+                    }, ]
                 }, {
-                    src: "images/members/mio.png",
-                    name: "w",
-                    name_yomi: "",
-                    hobby: "",
-                    skill: "",
-                    color: ""
+                    src: "images/PC/members/mio.png",
+                    name: "毛塚 みお",
+                    name_yomi: "Kezuka Mio",
+                    hobby: "お菓子作り\nドラマ鑑賞、ギター",
+                    skill: "ソフトボール、水泳、ロンダート",
+                    color: "● Ice Blue",
+                    color_css: "#8ecae6",
+                    details: [{
+                        item: "BIRTH.",
+                        text: "1995.10.2"
+                    }, {
+                        item: "BLOOD",
+                        text: "不明"
+                    }, {
+                        item: "HEIGHT.",
+                        text: "159cm"
+                    }, {
+                        item: "BORN.",
+                        text: "埼玉"
+                    }, ]
                 }, {
-                    src: "images/members/mikan.png",
-                    name: "w",
-                    name_yomi: "",
-                    hobby: "",
-                    skill: "",
-                    color: ""
+                    src: "images/PC/members/mikan.png",
+                    name: "月乃瀬 みかん",
+                    name_yomi: "Tukinose Mikan",
+                    hobby: "アニメ鑑賞、\n漫画を読む、カラオケ",
+                    skill: "イラストを描くこと",
+                    color: "● Cherry Red",
+                    color_css: "#e70046",
+                    details: [{
+                        item: "BIRTH.",
+                        text: "1995.5.24"
+                    }, {
+                        item: "BLOOD",
+                        text: "A型"
+                    }, {
+                        item: "HEIGHT.",
+                        text: "150cm"
+                    }, {
+                        item: "BORN.",
+                        text: "札幌"
+                    }, {
+                        item: "UNIV.",
+                        text: "青山学院大学"
+                    }, ]
                 }, {
-                    src: "images/members/nana.png",
-                    name: "",
-                    name_yomi: "",
-                    hobby: "",
-                    skill: "",
-                    color: ""
+                    src: "images/PC/members/nana.png",
+                    name: "星野 菜々",
+                    name_yomi: "Hoshino Nana",
+                    hobby: "アニソンでDJ、アイカツ\nリラックマと遊ぶ",
+                    skill: "卓球",
+                    color: "● Lemon Yellow",
+                    color_css: "#dfcf00",
+                    details: [{
+                        item: "BIRTH.",
+                        text: "1995.10.2"
+                    }, {
+                        item: "BLOOD",
+                        text: "不明"
+                    }, {
+                        item: "HEIGHT.",
+                        text: "159cm"
+                    }, {
+                        item: "BORN.",
+                        text: "埼玉"
+                    }, ]
                 }, {
-                    src: "images/members/satomi.png",
-                    name: "",
-                    name_yomi: "",
-                    hobby: "",
-                    skill: "",
-                    color: ""
+                    src: "images/PC/members/satomi.png",
+                    name: "坂巻 里美",
+                    name_yomi: "Sakamaki Satomi",
+                    hobby: "カラオケ・妄想",
+                    skill: "ダンス",
+                    color: "● Carnation Pink",
+                    color_css: "#dd6299",
+                    details: [{
+                        item: "BIRTH.",
+                        text: "1993.12.30"
+                    }, {
+                        item: "BLOOD",
+                        text: "AB型"
+                    }, {
+                        item: "HEIGHT.",
+                        text: "162cm"
+                    }, ]
                 }, {
-                    src: "images/members/momomi.png",
-                    name: "",
-                    name_yomi: "",
-                    hobby: "",
-                    skill: "",
-                    color: ""
+                    src: "images/PC/members/momomi.png",
+                    name: "望 桃美",
+                    name_yomi: "Mochi Momomi",
+                    hobby: "カメラ、猫カフェ巡り",
+                    skill: "水泳、寝ること",
+                    color: "● Shell Pink",
+                    color_css: "#eda7bf",
+                    details: [{
+                        item: "BIRTH.",
+                        text: "1996.12.8"
+                    }, {
+                        item: "BLOOD",
+                        text: "O型"
+                    }, {
+                        item: "HEIGHT.",
+                        text: "168cm"
+                    }, {
+                        item: "BORN.",
+                        text: "愛知"
+                    }, ]
                 }, {
-                    src: "images/members/keina.png",
-                    name: "",
-                    name_yomi: "",
-                    hobby: "",
-                    skill: "",
-                    color: ""
+                    src: "images/PC/members/keina.png",
+                    name: "一瀬 恵菜",
+                    name_yomi: "Ichinose Keina",
+                    hobby: "北海道の馬産地へ行くこと\nギター、作詞作曲、ゲーム\n世界旅行ごっこ、乗馬\nダンス(hiphop)",
+                    skill: "歌を歌うこと\n犬の鳴き真似",
+                    color: "● Sax Blue",
+                    color_css: "#709bd0",
+                    details: [{
+                        item: "BIRTH.",
+                        text: "1995.7.7"
+                    }, {
+                        item: "BLOOD",
+                        text: "O型"
+                    }, {
+                        item: "HEIGHT.",
+                        text: "162cm"
+                    }, {
+                        item: "BORN.",
+                        text: "東京"
+                    }, {
+                        item: "UNIV.",
+                        text: "立教大学"
+                    }, ]
                 }, {
-                    src: "images/members/airi.png",
-                    name: "",
-                    name_yomi: "",
-                    hobby: "",
-                    skill: "",
-                    color: ""
+                    src: "images/PC/members/airi.png",
+                    name: "I LOVE U@あいり",
+                    name_yomi: "I LOVE U Airi",
+                    hobby: "外国人とのコミュニケーション、映画鑑賞",
+                    skill: "ダンスの振り付けを覚えるのが早い、子供に好かれる、マイクを持たせたら延々とトークを繰り広げる",
+                    color: "● Turquoise Blue",
+                    color_css: "#11b6ca",
+                    details: [{
+                        item: "BIRTH.",
+                        text: "1997.5.15"
+                    }, {
+                        item: "BLOOD",
+                        text: "A型"
+                    }, {
+                        item: "HEIGHT.",
+                        text: "158cm"
+                    }, {
+                        item: "BORN.",
+                        text: "広島"
+                    }, ]
                 }, ],
                 contacts: ["お名前", "メールアドレス", "お問い合わせ内容", "質問内容"]
             },
