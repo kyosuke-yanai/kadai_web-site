@@ -59,15 +59,15 @@
             <section class="schedule base__wrapper">
                 <h2 class="schedule__ttl base__ttl base__ttl--before-line">Schedule.</h2>
                 <ul class="schedule__contents-list">
-                    <li class="schedule__contents base__list-style--none" v-for="_ in 3">
-                        <time class="schedule__contents-time-text">2018.3.31</time>
-                        <h3 class="schedule__contents-text"><span>4/11</span>以下が水平線の例</h3>
+                    <li class="schedule__contents base__list-style--none" v-for="schedule in schedules">
+                        <time class="schedule__contents-time-text">{{ schedule.post_data }}<span class="schedule__contents-time-new" v-if="schedule.new_flg">NEW</span></time>
+                        <h3 class="schedule__contents-text"><span>{{ schedule.schedule_data }} </span>{{ schedule.text }}
+                        </h3>
                         <hr>
                     </li>
-                    <li class="schedule__contents--past base__list-style--none" v-for="_ in 2">
-                        <time class="schedule__contents-time-text">2018.3.31</time>
-                        <h3 class="schedule__contents-text"><span>4/11</span>以下が水平線の例</h3>
-                        <hr>
+                    <li class="schedule__contents--past base__list-style--none" v-for="past_chedule in past_chedules">
+                        <time class="schedule__contents-time-text">{{ past_chedule.post_data }}</time>
+                        <h3 class="schedule__contents-text"><span>{{ past_chedule.schedule_data }} </span>{{ past_chedule.text }}</h3>
                     </li>
                 </ul>
             </section>
@@ -105,8 +105,8 @@
                                     <li class="member__profile-details base__list-style--none">
                                         <ul>
                                             <li class="member__profile-detail base__list-style--none" v-for="detail in member.details">
-                                                <div class="mamber__profile-detail-item" :style="{backgroundColor: member.color_css}">{{ detail.item }}</div>
-                                                <div class="mamber__profile-detail-text">{{ detail.text }}</div>
+                                                <div class="member__profile-detail-item" :style="{backgroundColor: member.color_css}">{{ detail.item }}</div>
+                                                <div class="member__profile-detail-text">{{ detail.text }}</div>
                                             </li>
                                         </ul>
                                     </li>
@@ -150,6 +150,31 @@
         new Vue({
             el: "#app",
             data: {
+                schedules: [{
+                    post_data: "2018.3.31",
+                    schedule_data: "4/11",
+                    text: "船橋競馬場ビギナーズカウンターにて桜花のキセキメンバー2名がご案内",
+                    new_flg: true
+                }, {
+                    post_data: "2018.3.31",
+                    schedule_data: "4/11",
+                    text: "渋谷クロスFM 毎週水曜日12:00～12:50 Girls horse Times Radio 出演中",
+                    new_flg: true
+                }, {
+                    post_data: "2018.3.31",
+                    schedule_data: "4/10 22:00~",
+                    text: "ニコ生ダビスタ特番出演！　出演者：みかん、けいな、あいり",
+                    new_flg: false
+                }],
+                past_chedules: [{
+                    post_data: "2018.3.31",
+                    schedule_data: "4/11",
+                    text: "船橋競馬場ビギナーズカウンターにて桜花のキセキメンバー2名がご案内",
+                }, {
+                    post_data: "2018.3.31",
+                    schedule_data: "4/11",
+                    text: "渋谷クロスFM 毎週水曜日12:00～12:50 Girls horse Times Radio 出演中",
+                }],
                 members: [{
                     src: "images/PC/members/eriko.png",
                     name: "城田 えりこ",
