@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    color: #000000;
+}
+
 .pc {
     display: block;
 }
@@ -59,7 +64,8 @@
     color: #ffffff;
 }
 
-.base__btn-style:before {
+
+/* .base__btn-style:before {
     content: "";
     display: block;
     margin-top: 7%;
@@ -69,7 +75,7 @@
     content: "";
     display: block;
     margin-top: 7%;
-}
+} */
 
 .base__newline-style {
     white-space: pre-wrap;
@@ -190,7 +196,7 @@
 
 .news__btn-more {
     width: 40%;
-    margin: 30px 0;
+    height: 71px;
     font-size: 21px;
     font-weight: 600;
 }
@@ -352,7 +358,6 @@
 
 .mamber__profile-detail-text {
     width: auto;
-    color: #000000;
 }
 
 .member_profile-img {
@@ -410,6 +415,90 @@
     }
 }
 
+.contact__ttl span {
+    font-size: 14px;
+    margin-left: 24px;
+}
+
+.contact__text--small {
+    font-size: 14px;
+}
+
+.contact__contents-ttl {
+    font-size: 21px;
+}
+
+.contact__contents-ttl:after {
+    content: "(※)";
+    color: #ff6556;
+}
+
+.contact__contents-input {
+    background-color: #f3f1eb;
+    border: none;
+    width: 31.1%;
+    height: 60px;
+}
+
+.contact__contents:nth-child(2) .contact__contents-input {
+    background-color: #ff6556;
+    width: 55.2%;
+}
+
+.contact__contents:nth-child(4) .contact__contents-input {
+    width: 77.7%;
+    height: 227px;
+}
+
+.contents__btn-back {
+    width: 23.5%;
+    height: 72px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.contents__btn-back-before {
+    display: inline-block;
+    height: 33%;
+    vertical-align: middle;
+    margin-right: 6.6%;
+    margin-bottom: 3px;
+}
+
+.contents__btn-back-before img {
+    transform: scale(-1, 1);
+    height: 100%;
+}
+
+.contents__btn-back-after {
+    margin-left: 18%;
+    font-size: 24px;
+}
+
+.contents__btn-submit {
+    width: 38%;
+    height: 72px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.contents__btn-submit-before {
+    margin-right: 28%;
+    font-size: 24px;
+}
+
+.contents__btn-submit-after {
+    display: inline-block;
+    height: 33%;
+    vertical-align: middle;
+    margin-left: 7%;
+    margin-bottom: 3px;
+}
+
+.contents__btn-submit-after img {
+    height: 100%;
+}
+
 .footer {
     background-color: #d5cdb9;
 }
@@ -421,7 +510,6 @@
 
 .footer__contents-img {
     width: 100%;
-    color: #000000;
 }
 
 .footer__contents-copylight {

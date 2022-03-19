@@ -118,16 +118,22 @@
                 </div>
             </section>
             <section class="contact base__wrapper pc">
-                <h2 class="contact__ttl base__ttl base__ttl--before-line">Contact.</h2>
+                <h2 class="contact__ttl base__ttl base__ttl--before-line">
+                    Contact.<span>出演依頼等、その他のお問い合わせはこちらからお願いします。</span></h2>
                 <p class="contact__text--small">すべて入力必須項目です</p>
                 <ul class="contact__contents-list">
-                    <li class="contact__contents base__ttl--before-line" v-for="contact in contacts">
-                        <p class="contact__contents-ttl contact__contents-ttl--after-alert">{{ contact }}</p>
-                        <input type="text" class="contact__contents-input">
+                    <li class="contact__contents base__list-style--none" v-for="contact in contacts">
+                        <p class="contact__contents-ttl contact__contents-ttl--after-alert">{{ contact.question }}</p>
+                        <input type="text" class="contact__contents-input" v-model="contact.answer">
                     </li>
                 </ul>
-                <button class="contents__btn-back base__btn-style">BACK</button>
-                <button class="contents__btn-submit base__btn-style">SUBMIT</button>
+                <button class="contents__btn-back base__btn-style"><span class="contents__btn-back-before"><img
+                            src="images/PC/contact/btn_arrow.png" alt=""></span>BACK<span
+                        class="contents__btn-back-after">戻る</span></button>
+                <button class="contents__btn-submit base__btn-style"><span
+                        class="contents__btn-submit-before">送信する</span>SUBMIT<span
+                        class="contents__btn-submit-after"><img src="images/PC/contact/btn_arrow.png"
+                            alt=""></span></button>
             </section>
         </main>
         <footer class="footer">
@@ -334,7 +340,19 @@
                         text: "広島"
                     }, ]
                 }, ],
-                contacts: ["お名前", "メールアドレス", "お問い合わせ内容", "質問内容"]
+                contacts: [{
+                    question: "お名前",
+                    answer: "入力完了確認"
+                }, {
+                    question: "メールアドレス",
+                    answer: "入力間違いの場合イメージ"
+                }, {
+                    question: "お問い合わせ内容",
+                    answer: "入力完了確認"
+                }, {
+                    question: "質問内容",
+                    answer: "入力完了確認入力完了確認入力完了確認入力完了確認入力完了確認入力完了確認入力完了確認入力完了確認"
+                }]
             },
         })
     </script>
