@@ -16,9 +16,22 @@
         <header class="header header__wrapper">
             <div class="header__contents">
                 <h1 class="header__contents-ttl">OKA NO KISEKI <span>OFFICIAL SITE</span></h1>
-                <button class="header__contents-menu-btn"><img src="images/PC/header/menu.png" alt=""></button>
+                <button class="header__contents-menu-btn" v-on:click="menu_flg=!menu_flg">
+                    <img src="images/PC/header/menu.png" alt="" v-if="!menu_flg"
+                        class="header__contents-menu-btn--open">
+                    <img src="images/PC/header/menu_close.png" alt="" v-if="menu_flg"
+                        class="header__contents-menu-btn--close">
+                </button>
+                <div class="header__contents-menu" :class="{'is-active' : menu_flg }">
+                    <div class="header__contents-menu-item">TOP</div>
+                    <div class="header__contents-menu-item">News</div>
+                    <div class="header__contents-menu-item">Member</div>
+                    <div class="header__contents-menu-item">Schedule</div>
+                    <div class="header__contents-menu-item">Music</div>
+                </div>
             </div>
         </header>
+
         <main>
             <section class="mv">
                 <img src="images/PC/mv/mv_pc.jpg" alt="" class="mv__top-img pc">
@@ -64,7 +77,7 @@
                                 class="schedule__contents-time-new" v-if="schedule.new_flg">NEW</span></time>
                         <h3 class="schedule__contents-text"><span>{{ schedule.schedule_data }} </span>{{ schedule.text }}
                         </h3>
-                        <hr>
+                        <hr noshade>
                     </li>
                 </ul>
                 <div class="past_schedule pc">
@@ -107,18 +120,24 @@
                                         <div class="member__profile-skill-main base__newline-style">{{ member.skill }}
                                         </div>
                                     </li>
-                                    <li class="member__profile-color base__list-style--none" :style="{color: member.color_css}">{{ member.color }}</li>
+                                    <li class="member__profile-color base__list-style--none" :style="{color: member.color_css}">
+                                        <div class="member__profile-color-text">{{ member.color }}</div>
+                                    </li>
                                     <li class="member__profile-details base__list-style--none">
                                         <ul>
                                             <li class="member__profile-detail base__list-style--none" v-for="detail in member.details">
-                                                <div class="member__profile-detail-item" :style="{backgroundColor: member.color_css}">{{ detail.item }}</div>
-                                                <div class="member__profile-detail-text">{{ detail.text }}</div>
+                                                <div class="member__profile-detail-item" :style="{backgroundColor: member.color_css}">
+                                                    <div class="base__text-margin">{{ detail.item }}</div>
+                                                </div>
+                                                <div class="member__profile-detail-text">
+                                                    <div class="base__text-margin">{{ detail.text }}</div>
+                                                </div>
                                             </li>
                                         </ul>
                                     </li>
                                 </div>
                             </ul>
-                            <img v-bind:src="member.src" alt="" class="member_profile-img">
+                            <div class="member__profile-imgbox"><img v-bind:src="member.src" alt="" class="member__profile-img"></div>
                         </li>
                     </ul>
                 </div>
@@ -132,6 +151,8 @@
                         <p class="contact__contents-ttl contact__contents-ttl--after-alert">{{ contact.question }}</p>
                         <input type="text" class="contact__contents-input" v-model="contact.answer">
                     </li>
+                    <p class="contact__contents-ttl contact__contents-ttl--after-alert">質問内容</p>
+                    <textarea type="text" class="contact__contents-input--big">入力完了確認入力完了確認入力完了確認入力完了確認入力完了確認入力完了確認入力完了確認入力完了確認入力完了確認入力完了確認入力完了確認入力完了確認入力完了確認入力完了確認入力完了確認入力完了確認</textarea>
                 </ul>
                 <button class="contents__btn-back base__btn-style"><span class="contents__btn-back-before"><img
                             src="images/PC/contact/btn_arrow.png" alt=""></span>BACK<span
@@ -156,6 +177,7 @@
         new Vue({
             el: "#app",
             data: {
+                menu_flg: false,
                 schedules: [{
                     post_data: "2018.3.31",
                     schedule_data: "4/11",
@@ -380,9 +402,6 @@
                 }, {
                     question: "お問い合わせ内容",
                     answer: "入力完了確認"
-                }, {
-                    question: "質問内容",
-                    answer: "入力完了確認入力完了確認入力完了確認入力完了確認入力完了確認入力完了確認入力完了確認入力完了確認"
                 }]
             },
         })
