@@ -179,6 +179,24 @@ body {
     .header__wrapper {
         max-width: 91%;
     }
+    .header__contents-menu {
+        flex-direction: column;
+        overflow: auto;
+        justify-content: start;
+    }
+    .header__contents-menu-item {
+        width: 47%;
+        padding: 84px;
+        text-align: center;
+        color: #ff6556;
+        font-size: 24px;
+        font-weight: 300;
+        border: none;
+        border-bottom: 5px solid white;
+    }
+    .header__contents-menu-item:nth-child(1) {
+        border-left: none;
+    }
 }
 
 @media screen and (max-width: 599px) {
@@ -265,6 +283,9 @@ body {
 }
 
 @media screen and (max-width: 751px) {
+    .news-twitter {
+        margin-top: 51px;
+    }
     .news {
         width: 100%
     }
@@ -333,6 +354,9 @@ body {
 }
 
 @media screen and (max-width: 751px) {
+    .music {
+        margin-top: 50px;
+    }
     .music__contents {
         flex-direction: column;
     }
@@ -365,6 +389,11 @@ body {
 
 .past_schedule__ttl:before {
     border-color: #bbad7b;
+}
+
+.schedule__contents button {
+    background-color: white;
+    border: none;
 }
 
 .schedule__contents .schedule__contents-time-text {
@@ -438,19 +467,136 @@ body {
     padding-top: 15px;
 }
 
+.schedule__contents--past button {
+    background-color: #f3f1eb;
+    border: none;
+}
+
 .schedule__contents--past .schedule__contents-time-text {
     margin: 0 47px;
 }
 
+.schedule__contents-overlay {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(253, 245, 243, 0);
+    transform: translateX(-100vw);
+    transition: all .3s linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.schedule__contents-overlay.is-active {
+    background-color: rgba(253, 245, 243, 0.9);
+    transform: translateX(0);
+}
+
+.schedule__contents-item {
+    display: flex;
+    flex-flow: column;
+    align-items: end;
+    width: 50%;
+    height: 90%;
+    overflow: auto;
+}
+
+.schedule__contents-item-close {
+    width: 75px;
+    height: 75px;
+    margin-bottom: 12px;
+    background: transparent;
+    border: none;
+}
+
+.schedule__contents-item-close img {
+    width: 100%;
+    height: 100%;
+}
+
+.schedule__contents-item-headbox {
+    width: 100%;
+    background-color: #ff6556;
+    color: #ffffff;
+    font-size: 30px;
+}
+
+.schedule__contents-item-headbox h3 {
+    padding: 40px;
+}
+
+.schedule__contents-item-mainbox {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 0 0 85px 0;
+}
+
+.schedule__contents-item-mainbox h3 {
+    color: #ff6556;
+    font-size: 24px;
+    padding: 0 85px;
+}
+
+.schedule__contents-item-mainbox p {
+    font-size: 16px;
+    padding: 0 85px;
+}
+
+.schedule__contents-item-mainbox p span {
+    font-size: 14px;
+}
+
+.schedule__contents-item-main {
+    margin-top: 51px;
+}
+
 @media screen and (max-width: 751px) {
+    .schedule {
+        margin-top: 50px;
+    }
     .schedule__contents-time-text {
         font-size: 20px;
     }
     .schedule__contents-time-new {
         font-size: 22px;
     }
+    .schedule__contents-item-close {
+        width: 103px;
+        height: 103px;
+    }
+    .schedule__contents-item-close img {
+        width: 100%;
+        height: 100%;
+    }
     .schedule__contents-text {
         font-size: 30px;
+        display: inline-block;
+        text-align: left;
+    }
+    .schedule__contents-item {
+        width: 90%;
+    }
+    .schedule__contents-item-headbox {
+        font-size: 42px;
+    }
+    .schedule__contents-item-mainbox h3 {
+        color: #ff6556;
+        font-size: 34px;
+        padding: 0 53px;
+    }
+    .schedule__contents-item-mainbox p {
+        font-size: 22px;
+        padding: 0 53px;
+    }
+    .schedule__contents-item-mainbox p span {
+        font-size: 20px;
+    }
+    .schedule__contents-item-main {
+        margin-top: 60px;
     }
 }
 
@@ -509,6 +655,7 @@ body {
 .member__profile-skill-main {
     font-size: 14px;
     color: #737373;
+    margin-bottom: 15px;
 }
 
 .member__profile-color {
@@ -592,6 +739,7 @@ body {
     .member__profile-hobby-main,
     .member__profile-skill-main {
         font-size: 21px;
+        margin-bottom: 10px
     }
     .member__profile-wrapper {
         width: 255px;
