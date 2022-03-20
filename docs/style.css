@@ -138,11 +138,11 @@ body {
 
 .header__contents-menu {
     position: fixed;
-    bottom: 0;
     right: 0;
     z-index: 1;
     width: 100%;
-    height: 69.6vw;
+    height: 100%;
+    margin-top: 21px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -155,7 +155,6 @@ body {
 .header__contents-menu.is-active {
     opacity: 1;
     transform: translateX(0);
-    overflow-y: hidden;
 }
 
 .header__contents-menu-item {
@@ -165,11 +164,15 @@ body {
     color: #ff6556;
     font-size: 24px;
     font-weight: 300;
-    border-right: 7px solid white;
+    border-right: 5px solid white;
+}
+
+.header__contents-menu-item:hover {
+    text-decoration: line-through;
 }
 
 .header__contents-menu-item:nth-child(1) {
-    border-left: 7px solid white;
+    border-left: 5px solid white;
 }
 
 @media screen and (max-width: 751px) {

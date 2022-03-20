@@ -22,13 +22,13 @@
                     <img src="images/PC/header/menu_close.png" alt="" v-if="menu_flg"
                         class="header__contents-menu-btn--close">
                 </button>
-                <div class="header__contents-menu" :class="{'is-active' : menu_flg }">
-                    <div class="header__contents-menu-item">TOP</div>
-                    <div class="header__contents-menu-item">News</div>
-                    <div class="header__contents-menu-item">Member</div>
-                    <div class="header__contents-menu-item">Schedule</div>
-                    <div class="header__contents-menu-item">Music</div>
-                </div>
+            </div>
+            <div class="header__contents-menu" :class="{'is-active' : menu_flg }">
+                <div class="header__contents-menu-item">TOP</div>
+                <div class="header__contents-menu-item">News</div>
+                <div class="header__contents-menu-item">Member</div>
+                <div class="header__contents-menu-item">Schedule</div>
+                <div class="header__contents-menu-item">Music</div>
             </div>
         </header>
 
@@ -88,6 +88,13 @@
                             <h3 class="schedule__contents-text"><span>{{ past_chedule.schedule_data }} </span>{{ past_chedule.text }}</h3>
                         </li>
                     </ul>
+                </div>
+                <div class="schedule__contents-item" :class="{'is-active' : schedule_flg }">
+                    <div class="header__contents-menu-item">TOP</div>
+                    <div class="header__contents-menu-item">News</div>
+                    <div class="header__contents-menu-item">Member</div>
+                    <div class="header__contents-menu-item">Schedule</div>
+                    <div class="header__contents-menu-item">Music</div>
                 </div>
             </section>
             <section class="music base__wrapper">
@@ -178,6 +185,7 @@
             el: "#app",
             data: {
                 menu_flg: false,
+                schedule_flg: false,
                 schedules: [{
                     post_data: "2018.3.31",
                     schedule_data: "4/11",
