@@ -228,6 +228,14 @@ body {
     .header__contents-ttl {
         font-size: 10px;
     }
+    .header__contents-menu-btn .header__contents-menu-btn--open {
+        width: 35px;
+        height: 17px;
+    }
+    .header__contents-menu-btn .header__contents-menu-btn--close {
+        width: 25px;
+        height: 25px;
+    }
     .header__contents-menu-item {
         padding: 46px 84px;
         font-size: 16px;
@@ -667,8 +675,8 @@ body {
         font-size: 16px;
     }
     .schedule__contents-item-close {
-        width: 70px;
-        height: 70px;
+        width: 50px;
+        height: 50px;
     }
     .schedule__contents-item-headbox {
         font-size: 20px;
@@ -831,7 +839,7 @@ body {
     }
     .member__profile-name-yomi {
         margin-top: 55px;
-        margin-bottom: 32px;
+        margin-bottom: 24px;
         font-size: 17px;
     }
     .member__profile-hobby-ttl,
@@ -867,6 +875,7 @@ body {
         display: flex;
         justify-content: center;
         padding-top: 130px;
+        padding-bottom: 25px;
     }
     .member__profile-img {
         width: 100%;
@@ -916,7 +925,8 @@ body {
         font-size: 10px;
     }
     .member__profile-imgbox {
-        padding-top: 0px;
+        padding-top: 10px;
+        padding-bottom: 0px;
     }
 }
 
