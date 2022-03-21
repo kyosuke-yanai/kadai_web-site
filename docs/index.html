@@ -88,7 +88,7 @@
                     <ul>
                         <li class="schedule__contents--past base__list-style--none" v-for="past_chedule in past_chedules">
                             <button @click="schedule_flg=!schedule_flg">
-                                <time class="schedule__contents-time-text">{{ past_chedule.post_data }}</time>
+                                <div class="schedule__contents-time-text">{{ past_chedule.post_data }}</div>
                                 <h3 class="schedule__contents-text"><span>{{ past_chedule.schedule_data }} </span>{{
                                     past_chedule.text }}</h3>
                             </button>

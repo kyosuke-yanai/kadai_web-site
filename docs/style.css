@@ -452,6 +452,8 @@ body {
 .schedule__contents button {
     background-color: white;
     border: none;
+    width: 100%;
+    height: 100%;
 }
 
 .schedule__contents button:hover {
@@ -503,6 +505,7 @@ body {
     margin: 33px 3px;
     font-size: 21px;
     text-decoration: underline;
+    text-align: start;
 }
 
 .schedule__contents-text span {
@@ -532,10 +535,17 @@ body {
 .schedule__contents--past button {
     background-color: #f3f1eb;
     border: none;
+    width: 100%;
+    height: 100%;
+}
+
+.schedule__contents--past button:hover {
+    cursor: pointer;
 }
 
 .schedule__contents--past .schedule__contents-time-text {
-    margin: 0 47px;
+    margin: 0 47px 5px 47px;
+    text-align: start;
 }
 
 .schedule__contents-overlay {
