@@ -443,14 +443,12 @@
                     answer: "入力完了確認"
                 }]
             },
-            // created() {
-            //     const img_size = document.getElementById("music__img").offsetHeight
-            //     this.music__img_size = img_size
-            // },
-            // 参考:https://www.javadrive.jp/javascript/event/index23.html
-            mounted: function() {
+            beforeCreate() {
                 const img_size = document.getElementById("music__img").offsetHeight
                 this.music__img_size = img_size
+            },
+            // 参考:https://www.javadrive.jp/javascript/event/index23.html
+            mounted: function() {
                 window.addEventListener('resize', this.handleResize)
             },
             methods: {
