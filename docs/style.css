@@ -809,13 +809,17 @@ body {
 @media screen and (max-width: 1024px) {
     .member__contents {
         width: 100%;
+        padding-top: 30px;
+    }
+    .member__contents:nth-child(8) .member__profile-details {
+        margin-bottom: 0px;
     }
     .member__contents-list {
         display: block;
         padding-top: 50px;
     }
     .member__profile-text {
-        width: 40%;
+        width: 30%;
     }
     .member__profile-name-main {
         position: absolute;
@@ -859,6 +863,7 @@ body {
     .member__profile-imgbox {
         display: flex;
         justify-content: center;
+        padding-top: 130px;
     }
     .member__profile-img {
         width: 100%;
@@ -866,7 +871,7 @@ body {
     }
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 750px) {
     .member__contents-list {
         padding-top: 20px;
     }
@@ -906,6 +911,9 @@ body {
     }
     .member__profile-detail-text {
         font-size: 10px;
+    }
+    .member__profile-imgbox {
+        padding-top: 0px;
     }
 }
 
