@@ -147,6 +147,10 @@ body {
     height: 35px;
 }
 
+.header__contents-menu-btn:hover {
+    cursor: pointer;
+}
+
 .header__contents-menu-btn .header__contents-menu-btn--open {
     width: 45px;
     height: 27px;
@@ -437,6 +441,10 @@ body {
     border: none;
 }
 
+.schedule__contents button:hover {
+    cursor: pointer;
+}
+
 .schedule__contents .schedule__contents-time-text {
     display: flex;
     align-items: center;
@@ -557,6 +565,10 @@ body {
     margin-bottom: 12px;
     background: transparent;
     border: none;
+}
+
+.schedule__contents-item-close {
+    cursor: pointer;
 }
 
 .schedule__contents-item-close img {
