@@ -97,7 +97,8 @@
                 </div>
                 <div class="schedule__contents-overlay" :class="{'is-active' : schedule_flg }">
                     <div class="schedule__contents-item" :class="{'is-active' : schedule_flg }">
-                        <button class="schedule__contents-item-close" @click="schedule_flg=!schedule_flg"><img src="images/PC/schedule/close.png" alt=""></button>
+                        <button class="schedule__contents-item-close" @click="schedule_flg=!schedule_flg"><img
+                                src="images/PC/schedule/close.png" alt=""></button>
                         <div class="schedule__contents-item-headbox">
                             <h3>Toshi Cafe 客は又吉<br>～こだわりのメニューを作る旅～</h3>
                         </div>
@@ -131,8 +132,8 @@
             <section class="music base__wrapper">
                 <h2 class="music__ttl base__ttl base__ttl--before-line">Music.</h2>
                 <div class="music__contents">
-                    <img src="images/PC/music/music_ph.jpg" alt="" class="music__ph-img">
-                    <div class="music__ttl-imgbox"><img src="images/PC/music/music_ttl.png" alt="" class="music__ttl-img"></div>
+                    <img src="images/PC/music/music_ph.jpg" alt="" class="music__ph-img" id="music__img">
+                    <div class="music__ttl-imgbox" :style="{height: music__img_size+'px'}"><img src="images/PC/music/music_ttl.png" alt="" class="music__ttl-img"></div>
                 </div>
             </section>
             <section class="member">
@@ -150,11 +151,13 @@
                                 <div class="member__profile-wrapper">
                                     <li class="member__profile-hobby base__list-style--none">
                                         <div class="member__profile-hobby-ttl">趣　味</div>
-                                        <div class="member__profile-hobby-main base__newline-style">{{ member.hobby }}</div>
+                                        <div class="member__profile-hobby-main base__newline-style">{{ member.hobby }}
+                                        </div>
                                     </li>
                                     <li class="member__profile-skill base__list-style--none">
                                         <div class="member__profile-skill-ttl">特　技</div>
-                                        <div class="member__profile-skill-main base__newline-style">{{ member.skill }}</div>
+                                        <div class="member__profile-skill-main base__newline-style">{{ member.skill }}
+                                        </div>
                                     </li>
                                     <li class="member__profile-color base__list-style--none" :style="{color: member.color_css}">
                                         <div class="member__profile-color-text">{{ member.color }}</div>
@@ -215,6 +218,7 @@
             data: {
                 menu_flg: false,
                 schedule_flg: false,
+                music__img_size: 0,
                 schedules: [{
                     post_data: "2018.3.31",
                     schedule_data: "4/11",
@@ -440,6 +444,20 @@
                     question: "お問い合わせ内容",
                     answer: "入力完了確認"
                 }]
+            },
+            created() {
+                const img_size = document.getElementById("music__img").offsetHeight
+                this.music__img_size = img_size
+            },
+            methods: {
+                handleResize: function() {
+                    const img_size = document.getElementById("music__img").offsetHeight
+                    this.music__img_size = img_size
+                }
+            },
+            // 参考:https://www.javadrive.jp/javascript/event/index23.html
+            mounted: function() {
+                window.addEventListener('resize', this.handleResize)
             },
         })
     </script>
