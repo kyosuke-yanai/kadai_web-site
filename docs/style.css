@@ -224,6 +224,10 @@ body {
     .header__contents-ttl {
         font-size: 10px;
     }
+    .header__contents-menu-item {
+        padding: 46px 84px;
+        font-size: 16px;
+    }
 }
 
 .mv {
@@ -647,6 +651,22 @@ body {
         margin: 33px 3px;
         font-size: 16px;
     }
+    .schedule__contents-item-close {
+        width: 70px;
+        height: 70px;
+    }
+    .schedule__contents-item-headbox {
+        font-size: 20px;
+    }
+    .schedule__contents-item-mainbox h3 {
+        font-size: 18px;
+    }
+    .schedule__contents-item-mainbox p {
+        font-size: 16px;
+    }
+    .schedule__contents-item-mainbox p span {
+        font-size: 12px;
+    }
 }
 
 .member {
@@ -775,9 +795,15 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
+    .member__contents {
+        width: 100%;
+    }
     .member__contents-list {
         display: block;
         padding-top: 50px;
+    }
+    .member__profile-text {
+        width: 40%;
     }
     .member__profile-name-main {
         position: absolute;
@@ -799,7 +825,7 @@ body {
         margin-bottom: 10px
     }
     .member__profile-wrapper {
-        width: 255px;
+        width: 100%;
     }
     .member__profile-color {
         font-size: 18px;
@@ -818,17 +844,30 @@ body {
         font-size: 21px;
         width: auto;
     }
+    .member__profile-imgbox {
+        display: flex;
+        justify-content: center;
+    }
     .member__profile-img {
-        width: 450px;
-        height: 846px;
+        width: 100%;
+        height: 100%;
     }
 }
 
 @media screen and (max-width: 599px) {
+    .member__contents-list {
+        padding-top: 20px;
+    }
+    .member__contents {
+        margin-top: 30px;
+    }
     .member__profile-name-main {
         font-size: 21px;
+        width: 200%;
     }
     .member__profile-name-yomi {
+        margin-top: 25px;
+        margin-bottom: 15px;
         font-size: 10px;
     }
     .member__profile-hobby-ttl,
@@ -842,9 +881,16 @@ body {
     .member__profile-color {
         font-size: 10px;
     }
+    .member__profile-details {
+        width: 200%;
+    }
+    .member__profile-detail {
+        display: flex;
+    }
     .member__profile-detail-item {
         font-size: 10px;
         width: 50px;
+        margin: 0 5px 2px 0;
     }
     .member__profile-detail-text {
         font-size: 10px;
