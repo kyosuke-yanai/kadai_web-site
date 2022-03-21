@@ -16,7 +16,7 @@ body {
     display: none;
 }
 
-@media screen and (max-width: 751px) {
+@media screen and (max-width: 1024px) {
     .pc {
         display: none;
     }
@@ -85,7 +85,19 @@ body {
     white-space: pre-wrap;
 }
 
-@media screen and (max-width: 751px) {
+@media screen and (max-width: 1400px) {
+    .base__wrapper {
+        max-width: 80%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .base__wrapper {
+        max-width: 89.5%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
     .base__wrapper {
         max-width: 89.5%;
     }
@@ -99,8 +111,17 @@ body {
     }
 }
 
+@media screen and (max-width: 599px) {
+    .base__ttl {
+        font-size: 12px;
+    }
+    .base__ttl--before-line:before {
+        width: 16px;
+        margin-right: 10px;
+    }
+}
+
 .header__wrapper {
-    max-width: 72.5%;
     margin: 21px auto;
 }
 
@@ -175,7 +196,7 @@ body {
     border-left: 5px solid white;
 }
 
-@media screen and (max-width: 751px) {
+@media screen and (max-width: 1024px) {
     .header__wrapper {
         max-width: 91%;
     }
@@ -222,7 +243,7 @@ body {
     right: 30%;
 }
 
-@media screen and (max-width: 751px) {
+@media screen and (max-width: 1024px) {
     .mv__alert-img {
         width: 30%;
         bottom: -18px;
@@ -282,7 +303,7 @@ body {
     margin-left: 24px;
 }
 
-@media screen and (max-width: 751px) {
+@media screen and (max-width: 1024px) {
     .news-twitter {
         margin-top: 51px;
     }
@@ -322,6 +343,22 @@ body {
     }
 }
 
+@media screen and (max-width: 599px) {
+    .news-twitter {
+        margin-top: 41px;
+    }
+    .news__contents-list {
+        gap: 3px;
+    }
+    .news__contents-ttl {
+        font-size: 14px;
+        margin: 24px 0;
+    }
+    .news__btn-more {
+        font-size: 18px;
+    }
+}
+
 .twitter {
     width: auto;
 }
@@ -353,7 +390,7 @@ body {
     width: 78.5%;
 }
 
-@media screen and (max-width: 751px) {
+@media screen and (max-width: 1024px) {
     .music {
         margin-top: 50px;
     }
@@ -503,6 +540,11 @@ body {
     width: 50%;
     height: 90%;
     overflow: auto;
+    opacity: 0;
+}
+
+.schedule__contents-item.is-active {
+    opacity: 1;
 }
 
 .schedule__contents-item-close {
@@ -554,7 +596,7 @@ body {
     margin-top: 51px;
 }
 
-@media screen and (max-width: 751px) {
+@media screen and (max-width: 1024px) {
     .schedule {
         margin-top: 50px;
     }
@@ -597,6 +639,13 @@ body {
     }
     .schedule__contents-item-main {
         margin-top: 60px;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .schedule__contents-text {
+        margin: 33px 3px;
+        font-size: 16px;
     }
 }
 
@@ -718,9 +767,17 @@ body {
     height: 538px;
 } */
 
-@media screen and (max-width: 751px) {
+@media screen and (max-width: 1200px) {
+    .member__contents-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 1024px) {
     .member__contents-list {
         display: block;
+        padding-top: 50px;
     }
     .member__profile-name-main {
         position: absolute;
@@ -764,6 +821,33 @@ body {
     .member__profile-img {
         width: 450px;
         height: 846px;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .member__profile-name-main {
+        font-size: 21px;
+    }
+    .member__profile-name-yomi {
+        font-size: 10px;
+    }
+    .member__profile-hobby-ttl,
+    .member__profile-skill-ttl {
+        font-size: 15px;
+    }
+    .member__profile-hobby-main,
+    .member__profile-skill-main {
+        font-size: 10px;
+    }
+    .member__profile-color {
+        font-size: 10px;
+    }
+    .member__profile-detail-item {
+        font-size: 10px;
+        width: 50px;
+    }
+    .member__profile-detail-text {
+        font-size: 10px;
     }
 }
 
@@ -897,12 +981,22 @@ body {
     padding: 42px 0 38px 0;
 }
 
-@media screen and (max-width: 751px) {
+@media screen and (max-width: 1024px) {
     .footer__contents-text {
         font-size: 24px;
     }
     .footer__contents-copylight {
         font-size: 16px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .footer__contents-text {
+        font-size: 12px;
+    }
+    .footer__contents-copylight {
+        font-size: 10px;
         text-align: center;
     }
 }
