@@ -937,8 +937,8 @@ body {
         font-size: 10px;
     }
     .member__profile-imgbox {
-        padding-top: 10px;
-        padding-bottom: 0px;
+        padding-top: 25px;
+        padding-bottom: 15px;
     }
 }
 
